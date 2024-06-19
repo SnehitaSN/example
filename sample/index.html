@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dubai Tourism</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f0f0f0;
+    }
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 10px;
+      text-align: center;
+    }
+    nav {
+      background-color: #444;
+      padding: 10px;
+      text-align: center;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      padding: 10px 20px;
+    }
+    nav a:hover {
+      background-color: #555;
+    }
+    #slider {
+      width: 100%;
+      overflow: hidden;
+    }
+    #slider img {
+      width: 100%;
+      display: none;
+    }
+    #slider img.active {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Welcome to Dubai</h1>
+  </header>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">Attractions</a>
+    <a href="#">Hotels</a>
+    <a href="#">Restaurants</a>
+    <a href="#">Contact</a>
+  </nav>
+  <div id="slider">
+    <img class="active" src="dubai1.jpg" alt="Dubai Image 1">
+    <img src="dubai2.jpg" alt="Dubai Image 2">
+    <img src="dubai3.jpg" alt="Dubai Image 3">
+  </div>
+  <script>
+    // Image Slider
+    const sliderImages = document.querySelectorAll("#slider img");
+    const intervalTime = 5000;
+    let imageIndex = 0;
+
+    function changeImage() {
+      sliderImages[imageIndex].classList.remove("active");
+      imageIndex = (imageIndex + 1) % sliderImages.length;
+      sliderImages[imageIndex].classList.add("active");
+    }
+
+    setInterval(changeImage, intervalTime);
+  </script>
+</body>
+</html>
